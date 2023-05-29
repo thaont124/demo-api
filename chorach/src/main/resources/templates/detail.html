@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body id = "detail">
+		<label>Name:</label>
+		<p></p>
+	</body>
+	<script>
+		detail()
+		function detail(){
+			alert(window.location.pathname.substring(8))
+			const xhttp = new XMLHttpRequest()
+			xhttp.onload = function(){
+				var ResponseJSON = xhttp.responseText
+				var Response = JSON.parse(ResponseJSON)
+				if (xhttp.status == 200){
+					alert(window.location.pathname.substring(8))
+					var elements = document.getElementById("detail")
+					var html = '<h1>Chi tiết sản phẩm</h1>'
+					html += '<label>Name:</label><p>'+ Response.name +'</p>'
+					html += '<label>Ngay san xuat:</label><p>'+ Response.nsxDate +'</p>'
+					html += '<label>Branch:</label><p>'+ Response.branch +'</p>'
+					html += '<label>Sold:</label><p>'+ Response.sold +'</p>'
+					
+					elements.innerHTML = html
+				}
+			}
+			xhttp.open("GET","/api/"+ window.location.pathname.substring(8), false)
+			xhttp.setRequestHeader("Content-type", "application/json")
+			xhttp.send()
+		}
+	</script>
+</html>

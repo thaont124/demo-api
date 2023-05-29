@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<input type="text" placeholder="Search..." onkeydown="search(event, this.value)">
+
+		<div id = "result-search">
+			<h1>Danh sách tìm kiếm</h1>
+			<table>
+				<thead>
+					<tr>
+						<th>STT</th>
+						<th>Tên</th>
+						<th>Ngày sản xuất</th>
+						<th>Thương hiệu</th>
+						<th>Số lượng đã bán</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr></tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div>
+			<h1>Danh sách sản phẩm</h1>
+			<table>
+				<thead>
+					<tr>
+						<th>STT</th>
+						<th>Tên</th>
+						<th>Ngày sản xuất</th>
+						<th>Thương hiệu</th>
+						<th>Số lượng đã bán</th>
+						<th>Xem chi tiết</th>
+					</tr>
+					
+				</thead>
+				<tbody id = "list"></tbody>
+				<tr>
+					
+				</tr>
+			</table>
+		</div>
+		
+	</body>
+	<script src="./list.js"></script>
+</html>
